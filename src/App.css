@@ -331,7 +331,7 @@ input[type="password"] {
 #wrapper{
   background-color: rgba(246, 246, 246, 0.997);
   width: 200px;
-  height: 927px;
+  height: 100vh;
   float: left;
 }
 .sidebar{
@@ -426,7 +426,7 @@ height: 1800px;
 }
 .content{
     width: 1471px;
-    height: 1034px;
+    height: auto;
   background-color: white;
 }
 .parcelle{
