@@ -2,7 +2,7 @@ import Liste from "./components/Liste";
 import Culture from "./components/Culture";
 import Dashboard from "./components/Dashboard";
 import Items from "./components/Items";
-import Login from "./components/Login";
+import LoginPage from "./pages/LoginPage";
 import Page from "./components/Page";
 import Simulation from "./components/Simulation";
 import Validation from "./components/Validation";
@@ -21,7 +21,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} exact />
+        <Route path="/login" element={<LoginPage />} exact />
         <Route path="/culture" element={<Culture />} exact />
         <Route path="/dashboard" element={<Dashboard />} exact />
         <Route path="/items" element={<Items />} exact />

@@ -7,30 +7,30 @@ const Dashboard= () => {
 
   <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
               <div class="brand-logo">
-              <a href="index.html">
+              <a href="/login">
               </a>
           </div>
       <ul class="sidebar-menu do-nicescrol">
           <li class="sidebar-header"></li>
                   <li  class="active">
-                  <a href="Dashboard.js" class="active">
+                  <a href="/dashboard" class="active">
                       <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                   </a>
                   </li>
   
                   <li >
-                  <a href="Culture.js" >
+                  <a href="/culture" >
                       <i class="zmdi zmdi-invert-colors"></i> <span>Culture</span>
                   </a>
                   </li>
 
                   <li>
-                  <a href="Validation.js">
+                  <a href="/validation">
                       <i class="zmdi zmdi-grid"></i> <span>Validation</span>
                   </a>
                   </li>
                   <li >
-                  <a href="Login.js">
+                  <a href="/login">
                       <i class="zmdi zmdi-lock"></i> <span>Log out</span>
                   </a>
                   </li>

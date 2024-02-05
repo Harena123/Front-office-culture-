@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3469e525.css",
+    "main.js": "/static/js/main.8d5971cc.js",
+    "static/js/787.bc7218d8.chunk.js": "/static/js/787.bc7218d8.chunk.js",
+    "static/media/culture.jpg": "/static/media/culture.2d3bbcd5cf59fca69c16.jpg",
+    "index.html": "/index.html",
+    "main.3469e525.css.map": "/static/css/main.3469e525.css.map",
+    "main.8d5971cc.js.map": "/static/js/main.8d5971cc.js.map",
+    "787.bc7218d8.chunk.js.map": "/static/js/787.bc7218d8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3469e525.css",
+    "static/js/main.8d5971cc.js"
+  ]
+}

@@ -10,7 +10,7 @@ const Liste= () => {
                     <main>  
                     <div id="bloc2">
                             <div class="connection">
-                                <h1>Se Connecter</h1>
+                                <h1><a style={{textDecoration:"none", color:"white"}} href='/login' >Se Connecter</a></h1>
                             </div>
                             <br></br>
                                 <div class="content">

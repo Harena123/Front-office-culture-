@@ -1,33 +1,57 @@
-const Login= () => {
-    return (
-        <div>
-             <section id="page">
-                <header>
-                </header>
-                <nav></nav>
-                    <main>  
-                    <div id="bloc">
-                            <div class="co">
-                                <h1>Login</h1>
-                            </div>
-                                            <form class="login" action="" method="post"> 
-                                        <div class="user"><label for="username">Nom :</label>
-                                            <input type="text" name="username" id="username" placeholder=" Enter your email..."></input>
-                                        </div>
-                                        <div class="pass"> <label for="password">Prix :</label> 
-                                            <input type="number" name="password" id="password" placeholder=" Enter your password..."></input>
-                                        </div>
-                                                <div class="actions">
-                                                    <input type="submit" name="login" value="Valider"></input>
-                                                </div>
-                                </form>
-                    </div>
-                    </main>
-                <footer></footer>
-            </section>
-        </div>
-    );
+import React, { useState } from "react";
+const Login = ({ onLogin }) => {
+  const [email, setEmail] = useState("Jack@gmail.com");
+  const [mdp, setPassword] = useState("J1");
+
+  const handleLogin = () => {
+    // Perform any client-side validation if needed
+
+    // Call the onLogin prop with user credentials
+    onLogin({ email, mdp });
   };
-  
-  export default Login;
-  
+
+  return (
+    <div>
+      <section id="page">
+        <header></header>
+        <nav></nav>
+        <main>
+          <div id="bloc">
+            <div className="co">
+              <h1>Login</h1>
+            </div>
+            <div className="user">
+              <label htmlFor="username">Nom :</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                name="username"
+                id="username"
+                placeholder=" Enter your email..."
+              ></input>
+            </div>
+            <div className="pass">
+              {" "}
+              <label htmlFor="password">Mot de passe :</label>
+              <input
+                type="password"
+                value={mdp}
+                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+                id="password"
+                placeholder=" Enter your password..."
+              ></input>
+            </div>
+            <div className="actions">
+              <button onClick={handleLogin}>Login</button>
+            </div>
+          </div>
+        </main>
+        <footer></footer>
+      </section>
+    </div>
+  );
+};
+
+export default Login;

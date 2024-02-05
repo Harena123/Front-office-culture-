@@ -1,5 +1,34 @@
-import React from 'react';
+import React, { useState } from "react";
+import { addCulture } from "../springApi";
+import { useNavigate } from "react-router-dom";
+
 const Culture= () => {
+    const navigate = useNavigate();
+    const [nom, setNom] = useState("");
+    const [prix, setPrix] = useState("");
+  
+    const handleInsertCulture = async () => {
+      try {
+        // Ensure that both nom and prix are entered
+        if (nom !== "" && prix !== "" && prix >= 0) {
+          // Use the addCulture function to insert a new culture
+          const response = await addCulture({ nom, prix: parseFloat(prix) });
+  
+          // Log the inserted culture
+          console.log("Inserted Culture:", response.data);
+  
+          // Clear the form fields
+          setNom("");
+          setPrix("");
+          navigate("/culture");
+        } else {
+          console.error("Please enter a name and price for the new culture.");
+        }
+      } catch (error) {
+        console.error("Error inserting culture:", error);
+      }
+    };
+  
     return (
 
 <div>
@@ -36,30 +65,43 @@ const Culture= () => {
         </ul>
     </div>
             <section id="page">
-                <header>
-                </header>
-                <nav></nav>
-                    <main>  
-                    <div id="bloc">
-                            <div class="co">
-                                <h1>Insertion Culture</h1>
-                            </div>
-                                            <form class="login" action="" method="post"> 
-                                        <div class="user"><label for="username">Nom :</label>
-                                            <input type="text" name="username" id="username" placeholder=" Enter your email..."></input>
-                                        </div>
-                                        <div class="pass"> <label for="password">Prix :</label> 
-                                            <input type="number" name="password" id="password" placeholder=" Enter your password..."></input>
-                                        </div>
-                                                <div class="actions">
-                                                    <input type="submit" name="login" value="Valider"></input>
-                                                </div>
-                                </form>
+            <header></header>
+        <nav></nav>
+        <main>
+          <div id="bloc">
+            <div className="co">
+              <h1>Insertion Culture</h1>
+            </div>
 
-
-                    </div>
-                    </main>
-                <footer></footer>
+            <form className="login" method="post">
+              <div className="user">
+                <label htmlFor="username">Name :</label>
+                <input
+                  type="text"
+                  value={nom}
+                  onChange={(e) => setNom(e.target.value)}
+                  placeholder=" Enter culture name..."
+                />
+              </div>
+              <div className="pass">
+                {" "}
+                <label htmlFor="password">Price :</label>
+                <input
+                  type="number"
+                  value={prix}
+                  onChange={(e) => setPrix(e.target.value)}
+                  placeholder=" Enter your price..."
+                />
+              </div>
+              <div className="actions">
+                <button type="button" onClick={handleInsertCulture}>
+                  Insert Culture
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+        <footer></footer>
             </section>
 </div>
 </div>
